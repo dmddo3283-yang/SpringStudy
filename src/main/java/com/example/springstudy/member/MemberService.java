@@ -1,4 +1,6 @@
 package com.example.springstudy.member;
 
-public class MemberService {
+public interface MemberService {
+    void join(Member member);
+    Member find(Long id);
 }
