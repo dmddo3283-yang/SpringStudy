@@ -14,9 +14,6 @@ public class OrderApp {
         MemberService memberService = app.memberservice();
         OrderService orderService = app.orderService();
 
-//        MemberService memberService = new MemberServiceImpl(null);
-//        OrderService orderService = new OrderServiceImpl(null);
-
         Long memberId = 1L;
         Member member = new Member(memberId, "memberA", Grade.VIP);
         memberService.join(member);
