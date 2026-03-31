@@ -3,13 +3,14 @@ package com.example.springstudy;
 import com.example.springstudy.member.Grade;
 import com.example.springstudy.member.Member;
 import com.example.springstudy.member.MemberService;
-import com.example.springstudy.member.MemberServiceImpl;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class MemberApp {
     public static void main(String[] args) {
-        AppConfig app = new AppConfig();
-        MemberService memberService = app.memberservice();
-//        MemberService memberService = new MemberServiceImpl();
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
+        MemberService memberService = applicationContext.getBean("memberService", MemberService.class);
+
         Member member = new Member(1L, "memberA", Grade.VIP);
         memberService.join(member);
 

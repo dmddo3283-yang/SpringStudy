@@ -6,13 +6,19 @@ import com.example.springstudy.member.MemberService;
 import com.example.springstudy.member.MemberServiceImpl;
 import com.example.springstudy.order.Order;
 import com.example.springstudy.order.OrderService;
-import com.example.springstudy.order.OrderServiceImpl;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class OrderApp {
     public static void main(String[] args) {
-        AppConfig app = new AppConfig();
-        MemberService memberService = app.memberservice();
-        OrderService orderService = app.orderService();
+//        AppConfig app = new AppConfig();
+//        MemberService memberService = app.memberService();
+//        OrderService orderService = app.orderService();
+
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
+        MemberService memberService = applicationContext.getBean("memberService", MemberService.class);
+        OrderService orderService = applicationContext.getBean("orderService", OrderService.class);
+
 
         Long memberId = 1L;
         Member member = new Member(memberId, "memberA", Grade.VIP);
