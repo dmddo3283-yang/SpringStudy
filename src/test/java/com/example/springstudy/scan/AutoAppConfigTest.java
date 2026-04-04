@@ -2,7 +2,6 @@ package com.example.springstudy.scan;
 
 import com.example.springstudy.AutoAppConfig;
 import com.example.springstudy.member.MemberService;
-import com.example.springstudy.order.OrderServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
