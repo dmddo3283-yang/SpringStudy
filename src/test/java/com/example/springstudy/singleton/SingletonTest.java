@@ -41,7 +41,6 @@ public class SingletonTest {
         MemberService appConfig2 = ac.getBean("memberService", MemberService.class);
 
 
-
-        Assertions.assertThat(appConfig).isSameAs( appConfig2);
+        Assertions.assertThat(appConfig).isSameAs(appConfig2);
     }
 }

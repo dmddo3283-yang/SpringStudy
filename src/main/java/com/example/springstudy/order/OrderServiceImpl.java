@@ -3,12 +3,15 @@ package com.example.springstudy.order;
 import com.example.springstudy.discount.DiscountPolicy;
 import com.example.springstudy.member.Member;
 import com.example.springstudy.member.MemberRepository;
-import com.example.springstudy.member.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class OrderServiceImpl implements OrderService {
     private final MemberRepository memberRepository;
     private DiscountPolicy discountPolicy;
 
+    @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
