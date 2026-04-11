@@ -16,6 +16,7 @@ public class RequestHeaderServlet extends HttpServlet {
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         printStartLine(request);
         printHeader(request);
+        printHeaderUtils(request);
     }
 
     private void printStartLine(HttpServletRequest request) {
@@ -44,5 +45,20 @@ public class RequestHeaderServlet extends HttpServlet {
                         .forEachRemaining(headerName -> System.out.println(headerName + ": " + request.getHeader(headerName)));
 
         System.out.println("--- Request-Header - end ---");
+        System.out.println();
+    }
+
+    private void printHeaderUtils(HttpServletRequest request) {
+        System.out.println("--- Header 편의 조회 start ---");
+        System.out.println("[Host 편의 조회]");
+        System.out.println("request.getServerName() = " + request.getServerName());
+        System.out.println("request.getServerPort() = " + request.getServerPort());
+        System.out.println();
+
+        System.out.println("[Accept-Language 편의 조회]");
+        request.getLocales().asIterator()
+                        .forEachRemaining(locale -> System.out.println("locale =" + locale.toString()));
+        System.out.println("request.getLocale() = " + request.getLocale());
+        System.out.println("--- Header 편의 조회 end ---");
     }
 }
