@@ -70,7 +70,12 @@ public class RequestHeaderServlet extends HttpServlet {
         }
         System.out.println();
 
+        System.out.println("[Content 편의 조회]");
+        System.out.println("request.getContentType() = " + request.getContentType());
+        System.out.println("request.getContentLength() = " + request.getContentLength());
+        System.out.println("request.getCharacterEncoding() = " + request.getCharacterEncoding());
 
         System.out.println("--- Header 편의 조회 end ---");
+        System.out.println();
     }
 }
