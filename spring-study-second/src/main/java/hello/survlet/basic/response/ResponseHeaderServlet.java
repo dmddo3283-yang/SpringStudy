@@ -23,6 +23,7 @@ public class ResponseHeaderServlet extends HttpServlet {
 
         content(response);
         cookie(response);
+        redirect(response);
     }
 
     private void content(HttpServletResponse response) {
@@ -34,5 +35,9 @@ public class ResponseHeaderServlet extends HttpServlet {
         Cookie cookie = new Cookie("my-cookie", "hello");
         cookie.setMaxAge(3600);
         response.addCookie(cookie);
+    }
+
+    private void redirect(HttpServletResponse response) throws IOException {
+        response.sendRedirect("/basic/hello-form.html");
     }
 }
