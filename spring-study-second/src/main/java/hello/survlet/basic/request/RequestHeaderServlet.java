@@ -2,6 +2,7 @@ package hello.survlet.basic.request;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -59,6 +60,17 @@ public class RequestHeaderServlet extends HttpServlet {
         request.getLocales().asIterator()
                         .forEachRemaining(locale -> System.out.println("locale =" + locale.toString()));
         System.out.println("request.getLocale() = " + request.getLocale());
+        System.out.println();
+
+        System.out.println("[cookie 편의 조회]");
+        if (request.getCookies() != null) {
+            for (Cookie cookie : request.getCookies()) {
+                System.out.println(cookie.getName() + " = " + cookie.getValue());
+            }
+        }
+        System.out.println();
+
+
         System.out.println("--- Header 편의 조회 end ---");
     }
 }
