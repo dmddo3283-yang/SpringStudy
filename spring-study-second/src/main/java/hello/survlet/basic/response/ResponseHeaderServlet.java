@@ -20,6 +20,11 @@ public class ResponseHeaderServlet extends HttpServlet {
         response.setHeader("Pragma", "no-cache");
         response.setHeader("my-header", "hello");
 
+        content(response);
+    }
 
+    private void content(HttpServletResponse response) {
+        response.setContentType("text/html");
+        response.setCharacterEncoding("utf-8");
     }
 }
