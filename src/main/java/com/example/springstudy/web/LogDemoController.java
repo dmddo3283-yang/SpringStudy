@@ -20,8 +20,11 @@ public class LogDemoController {
         String requestUrl = request.getRequestURL().toString();
         myLogger.setRequestURL(requestUrl);
 
+        System.out.println("requestUrl:" + requestUrl);
+
         myLogger.log("controller test");
         logDemoService.logic("testId");
         return "OK";
     }
+
 }
