@@ -2,6 +2,7 @@ package hello.survlet.basic.response;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -21,10 +22,17 @@ public class ResponseHeaderServlet extends HttpServlet {
         response.setHeader("my-header", "hello");
 
         content(response);
+        cookie(response);
     }
 
     private void content(HttpServletResponse response) {
         response.setContentType("text/html");
         response.setCharacterEncoding("utf-8");
+    }
+
+    private void cookie(HttpServletResponse response) {
+        Cookie cookie = new Cookie("my-cookie", "hello");
+        cookie.setMaxAge(3600);
+        response.addCookie(cookie);
     }
 }
