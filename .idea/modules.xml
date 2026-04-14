@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/SpringStudy.iml" filepath="$PROJECT_DIR$/.idea/SpringStudy.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/survlet.main.iml" filepath="$PROJECT_DIR$/.idea/modules/survlet.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/survlet.test.iml" filepath="$PROJECT_DIR$/.idea/modules/survlet.test.iml" />
     </modules>
   </component>
 </project>
